@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <script src="https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54473923-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href="trailsmap.css" rel="stylesheet"/>
+
+  <!--<link rel="shortcut icon" href="cubetree-favicon.png"/>-->
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="http://use.edgefonts.net/lancelot;neuton;lato.js"></script>
+
+
+  <link href="https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css" rel="stylesheet" />
+  
+  <title>AusTrails.org</title>
+</head>
+<body>
+  <div class="container">
+      <div id="header">
+          <div>
+
+            <h1>
+              <span class="header-title">AusTrails.org</span> &nbsp; <small>so many trails</small>
+            </h1>
+              <div class="source-list">VicMap, Great Trails, Recreation Trails, OpenStreetMap, Community submissions, Rail Trails
+              </div>
+            <div>
+            <small>
+            Made by <a href="http://stevebennett.me">Steve Bennett</a> (<a href="mailto:stevage@gmail.com">email</a>, <a href="http://twitter.com/stevage1">Twitter</a>) and Matt Cengia for <a href="http://au.okfn.org/">Open Knowledge Australia</a>. </small>
+            <p><a target="_blank" href="https://docs.google.com/forms/d/1sfhC-MbV30BqFSdKxfmXAAPn6zj52NTkKdKyTal8jk8/viewform">Submit a new trail or route</a>.
+            Or plan a ride using <a target="_blank" href="http://cycletour.org">cycletour.org</a>
+            </p>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div id="map"></div>
+  <div id="lists">
+      <a href="#" id="vicrt">Rail trails</a> 
+      <a href="#" id="vicgt">Great Trails</a> 
+  </div>
+  <div id="vicrts" class="trailslist">
+   <h3>Western</h3>
+    <a href="#" id="bs" data-loc="-37.69686, 143.64899, 11">Ballarat-Skipton</a>
+    <a href="#" id="ob" data-loc="-38.46649, 143.5858, 11">Old Beechy</a>
+    <a href="#" id="c2c" data-loc="-38.35889, 143.03375, 11">Crater to Coast</a>
+    <a href="#" id="tiger" data-loc="-38.50143, 143.72589, 13">Tiger</a>
+    <a href="#" id="pfw" data-loc="-38.34273, 142.37457, 12">Port Fairy-Warrnambool</a>
+    <a href="#" id="hc" data-loc="-37.70555, 141.91864, 13">Hamilton Coleraine</a>
+    <a href="#" id="grampians" data-loc="-37.05518, 142.70142, 13">Grampians</a>
+    <a href="#" id="gdrt" data-loc="-37.3928, 144.12003, 13">Great Divide</a>
+    <a href="#" id="domino" data-loc="-37.3868, 144.31297, 14">Domino</a>
+    <a href="#" id="bunny" data-loc="-37.56138, 143.88408, 15">Bunny</a>
+    <h3>Northern</h3>
+    <a href="#" id="grhcrt" data-loc="-37.160, 145.654, 10">Goulburn River High Country</a>
+    <a href="#" id="m2m" data-loc="-36.55378, 146.69769, 11">Murray to Mountains</a>
+    <small><a href="#" id="m2mrw" data-loc="-36.02967, 146.43402, 13">Rutherglen-Wagunhyah</a></small>
+    <a href="#" id="hcrt" data-loc="-36.2199, 147.25, 11">High Country</a>
+    <a href="#" id="mr" data-loc="-36.6045,145.1071,13">Murchison-Rushworth</a>
+    <a href="#" id="dookie" data-loc="-36.30517, 145.69519, 13">Dookie</a>
+    <a href="#" id="ok" data-loc="-36.78509, 144.40842, 12">O'Keefe</a>
+    <h3>Gippsland</h3>
+    <a href="#" id="gp" data-loc="-38.1, 146.80069, 11">Gippsland Plains</a>
+    <a href="#" id="egrt" data-loc="-37.73162, 148.10669, 11">East Gippsland</a>
+    <a href="#" id="gldt" data-loc="-37.81073, 147.94516, 12">Gippsland Lakes</a>
+    <a href="#" id="tt" data-loc="-38.6158, 146.6716, 12">Tarra Trail</a>
+    <a href="#" id="gsrt" data-loc="-38.58145, 146.02615,11">Great Southern</a>
+    <a href="#" id="gr" data-loc="-38.38042, 146.23077, 13">Grand Ridge</a>
+    <a href="#" id="bc" data-loc="-38.56723, 145.5233, 13">Bass Coast</a>
+    <a href="#" id="my" data-loc="-38.17127, 146.30596, 14">Moe-Yallourn</a>
+    <a href="#" id="tj" data-loc="-37.98, 146.34132, 14">Tyers Junction</a>
+    <a href="#" id="walhalla" data-loc="-37.97133, 146.4068, 14">Walhalla</a>
+    <a href="#" id="ntb" data-loc="-37.89599, 145.9938, 14">Noojee Trestle Bridge</a>
+    <a href="#" id="rc" data-loc="-38.05877, 145.94925, 14">Rokeby-Crossover</a>
+    <h3>Melbourne region</h3>
+    <a href="#" id="rh" data-loc="-38.38204, 145.062, 13">Red Hill</a>
+    <a href="#" id="kooweerup" data-loc="-38.20096, 145.49263, 15">Koo Wee Rup</a>
+    <a href="#" id="bellarine" data-loc="-38.20204, 144.45, 12">Bellarine</a>
+    <a href="#" id="lw" data-loc="-37.76094, 145.5043, 12">Lilydale-Warburton</a>
+    <a href="#" id="belgrave" data-loc="-37.8632, 145.28578, 13">Belgrave</a>
+    <a href="#" id="rosstown" data-loc="-37.89653, 145.03361, 14">Rosstown</a>
+    <a href="#" id="sandridge" data-loc="-37.83256, 144.94572, 15">Sandridge</a>
+    <!-- <a href="#" id="wdb" data-loc="-37.82355, 144.94735, 16">Webb Dock Bridge</a> -->
+    <a href="#" id="ic" data-loc="-37.78021, 144.97627, 15">Inner Circle</a>
+    <a href="#" id="oc" data-loc="-37.83216, 145.0705, 13">Outer Circle</a>
+    <a href="#" id="hk" data-loc="-37.81738, 145.03155, 15">Hawthorn-Kew</a>
+    </div>  
+  <div id="wikibox">
+    <div id="wikiimg"></div>
+    <div id="wikitext"></div>
+  </div>
+  <script src="trailsmap.js"></script>
+
+</body>
+</html>

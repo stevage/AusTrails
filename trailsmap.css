@@ -1,0 +1,157 @@
+body,html { width: 100%; height: 100%; }
+#map { 
+  width: 100%;
+  height: calc(100% - 160px);
+  border-top: 1px solid gray;
+}
+.map-tooltip {
+  width: 260px;
+  min-height:340px;
+  background:#eee;
+  border:1px solid #aaa;
+}
+.map-tooltip table {
+  position:absolute;
+  top:75px;
+  max-width: 245px;
+}
+.map-tooltip-content > b {
+  font-size: 24px;
+  font-family: lancelot,"Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+.map-tooltip-content > b i{
+  display:block;
+  font-size: 16px;
+  color: #555;
+}
+
+.map-tooltip-content th {
+  color: #555;
+  padding-right:8px;
+}
+
+.map-tooltip-content img {
+  width: 90%;
+}
+
+.map-tooltip-content strong {
+  font-weight:600;
+}
+
+#wikibox {
+  position:absolute;
+  left:0;
+  bottom:0;
+  /*height:600px;
+  width:400px;*/
+}
+#wikitext {
+  width:300px;
+  max-height:200px;
+  overflow:scroll;
+  background:#eee;
+  opacity:0.9;
+  font-size: 80%;
+}
+#wikitext h2 {
+  font-size:20px;
+}
+#wikibox img,
+#wikitext {
+    border:1px solid gray;
+}
+#wikitext h2 {
+  font-family:lancelot;
+  
+  font-weight:600;
+}
+
+#wikibox img {
+  width:300px;
+}
+#header {
+  height:120px;
+  font-family: lato, sans-serif;
+
+}
+#header h1 {
+  font-family: lancelot, serif;
+  font-size:44px;
+  font-weight:600;
+  margin-top:12px;
+  margin-bottom:8px;
+  display:inline-block;
+}
+.header-title {
+  color:hsl(120,60%,20%);
+}
+
+.source-list {
+  display:inline-block; 
+  height:50px; 
+  width:200px; 
+  font-size:80%;
+  margin-left:2em;
+}
+
+body { 
+  margin: 0;
+  background: hsl(100,31%,70%);
+  /* http://subtlepatterns.com/tree-bark/ */
+  /*background-color: green;*/
+
+}
+a,a:hover,a:focus,a:visited {
+  color: hsl(120,80%,25%);
+  font-weight: 600;
+}
+
+#logo {
+  /* Icon by Charles Paulk, Code for Australia. charliepaulk@gmail.com */
+  background-image: url('cubetree-logo.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:right;
+  width:100px;
+  height:120px;
+  float:left;
+  margin: 6px 16px;
+}
+
+
+#lists { 
+    top: 0px;  width: 15%; 
+    height: 29px;
+    position: absolute;
+    float: left;
+    font-family: sans-serif;
+    background:hsla(200, 10%, 80%,0.35); 
+}
+
+
+.trailslist { 
+    bottom: 20px;
+    width: 15%; 
+    background:hsla(200, 10%, 80%,0.35); 
+    margin:0;
+    padding: 4px;
+    position: absolute;
+    float: left;
+    top: 130px;
+    overflow-y:scroll;
+}
+.trailslist a { 
+    display:block; font-family: sans-serif;
+    color: #333;
+    text-shadow: 1px 1px 3px #888, 0px 0px 1px white, 1px 0px 1px white, -1px 0px 1px white, 0px 1px 1px white, 0px -1px 1px white, 
+    0px 0px 2px white, 1px 0px 2px white, -1px 0px 2px white, 0px 1px 2px white, 0px -1px 2px white;
+    text-decoration:none;
+}
+.trailslist a:visited, .trailslist a { color: #117;}
+
+.trailslist     h3 { font-family: sans-serif; margin: 0; text-decoration:underline; font-size:16px;}
+
+
+.container {
+  margin-left:160px;
+}
