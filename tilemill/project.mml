@@ -1,0 +1,216 @@
+{
+  "bounds": [
+    139.0869,
+    -39.3343,
+    150.8643,
+    -34.2345
+  ],
+  "center": [
+    144.624,
+    -37.2303,
+    5
+  ],
+  "format": "png8",
+  "interactivity": {
+    "layer": "interaction",
+    "template_teaser": "{{{name}}} {{{description}}} {{{photo}}} {{{pid}}}",
+    "fields": [
+      "name",
+      "source",
+      "description",
+      "sourceurl",
+      "photo",
+      "id"
+    ],
+    "template_full": "{{{name}}} {{{source}}} {{{description}}} {{{sourceurl}}} {{{photo}}}  {{{pid}}}"
+  },
+  "minzoom": 0,
+  "maxzoom": 13,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "extent": [
+        140.9571396187004,
+        -39.12983695980004,
+        148.45552532002307,
+        -36.31611211230002
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "greattrails",
+        "key_field": "",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "15691277.0060301,-4740286.70392326,16525993.4840729,-4344205.54411953",
+        "host": "localhost",
+        "user": "ubuntu",
+        "dbname": "trails",
+        "password": "ubuntu",
+        "id": "greattrails",
+        "project": "trails",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "greattrails",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "greattrails",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        141.0695133330002,
+        -38.65132394199996,
+        149.75012126699994,
+        -35.29623145799999
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select *\nfrom rectrails\nwhere h_activity is not null or m_activity is not null) p",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15703786.3906845,-4671849.07338466,16670107.2456734,-4204211.04151714",
+        "host": "localhost",
+        "user": "ubuntu",
+        "dbname": "trails",
+        "password": "ubuntu"
+      },
+      "id": "rectrails",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "rectrails"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        140.9571396187004,
+        -39.12935533559998,
+        148.45552532002307,
+        -36.31611211230002
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select *\nfrom alltrails\nwhere walking='yes')  p",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15691277.0060301,-4740217.58861848,16525993.4840729,-4344205.54411953",
+        "host": "localhost",
+        "user": "ubuntu",
+        "dbname": "trails",
+        "password": "ubuntu"
+      },
+      "id": "walkingtrails",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "walkingtrails"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        114.98025421055381,
+        -46.90241998770942,
+        178.0262049240121,
+        -12.424915627353874
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select *\nfrom alltrails\nwhere walking is null) p",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "12799543.35,-5926161.05,19817786.48,-1394105.14",
+        "host": "localhost",
+        "user": "ubuntu",
+        "dbname": "trails",
+        "password": "ubuntu"
+      },
+      "id": "biketrails",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "biketrails"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        113.40495738421406,
+        -46.898251594937044,
+        179.44456507502116,
+        6.977807899033465
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "allsites",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "12624182.1094436,-5925481.92797719,19975677.6097718,778693.307556194",
+        "host": "localhost",
+        "user": "ubuntu",
+        "dbname": "trails",
+        "password": "ubuntu"
+      },
+      "id": "allsites",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "allsites"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        114.98025421055381,
+        -46.90241998770942,
+        178.0262049240121,
+        -12.424915627353874
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT -id AS id, 0 AS type, the_geom,source, name, description, \n'' AS sourceurl,\n'' AS photo,\npid\nFROM allsites\nUNION\nSELECT id, 1 AS type, the_geom, source, name, description AS description,  sourceurl,\nphoto,\npid\nFROM alltrails\nORDER BY type desc, id desc\n) p",
+        "key_field": "id",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "12799543.35,-5926161.05,19817786.48,-1394105.14",
+        "host": "localhost",
+        "user": "ubuntu",
+        "dbname": "trails",
+        "password": "ubuntu"
+      },
+      "id": "interaction",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "interaction"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "trails",
+  "description": "",
+  "legend": "",
+  "attribution": ""
+}
